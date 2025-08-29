@@ -1,21 +1,23 @@
-import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <div>
-      <nav style={{ padding: "10px", background: "#eee" }}>
-        <Link to="/" style={{ marginRight: "10px" }}>Home</Link>
-        <Link to="/about">About</Link>
+    <Router>
+      <nav style={{ padding: "10px", background: "#f0f0f0" }}>
+        <Link to="/login" style={{ marginRight: "10px" }}>Login</Link>
+        <Link to="/register" style={{ marginRight: "10px" }}>Register</Link>
+        <Link to="/dashboard">Dashboard</Link>
       </nav>
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
-    </div>
+    </Router>
   );
 }
 
