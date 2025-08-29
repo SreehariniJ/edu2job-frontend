@@ -1,27 +1,22 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Register from "./pages/Register";
-import Login from "./pages/Login";
-import Profile from "./pages/Profile";
-import Predict from "./pages/Predict";
+import React from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
 
-export default function App() {
+function App() {
   return (
-    <BrowserRouter>
-      <nav className="nav">
-        <Link to="/register">Register</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/profile">Profile</Link>
-        <Link to="/predict">Predict</Link>
+    <div>
+      <nav style={{ padding: "10px", background: "#eee" }}>
+        <Link to="/" style={{ marginRight: "10px" }}>Home</Link>
+        <Link to="/about">About</Link>
       </nav>
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<div>Welcome to Edu2Job</div>} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/predict" element={<Predict />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </div>
   );
 }
+
+export default App;
